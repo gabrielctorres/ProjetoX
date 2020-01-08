@@ -5,23 +5,26 @@ using UnityEngine;
 public abstract class Airplane : MonoBehaviour
 {
     private float Timer = 3f;
-    protected float velocidade  = 4f;   
+    protected float velocidade  = 10f;   
+    protected float fallSpeed = 0.6f;
+    protected float rotationSpeed = 5f;
     protected float fuel = 1f;
     protected Animator grafico;
     protected Rigidbody2D rb;
 
-    protected void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         grafico = GetComponent<Animator>();
 
     }
     
-    protected void Update()
+    protected virtual void Update()
     {
         FuelSystem();
         Moviment();
         Animation();
+        LimitandoTela();
     }
 
     protected virtual void FuelSystem(){
@@ -32,21 +35,34 @@ public abstract class Airplane : MonoBehaviour
             fuel -= 0.02f;
             Timer = 3;
         }
-        Debug.Log(fuel);
     }
 
     protected void Moviment(){
+        transform.Translate(Vector2.right * velocidade * Time.deltaTime);
+
+        //está sempre caindo
+        fall();
+
+        // se tem combustivel entao move
         if(fuel >0){
             Move();
-        }else{
-            fall();
         }
     }
 
     public abstract void Move();
 
-    protected void fall(){
-        // provavelmente n vai precisar
+    private void fall(){
+        
+        float rotation = transform.rotation.eulerAngles.z;
+        
+        //esquerda ou direita?
+        if(rotation < 90 || rotation > 280)
+        {
+            transform.Rotate(new Vector3(0, 0, -fallSpeed));
+        }else
+        {
+            transform.Rotate(new Vector3(0, 0, fallSpeed));
+        }
     }
     protected void Animation()
     {
@@ -65,6 +81,16 @@ public abstract class Airplane : MonoBehaviour
         {
             grafico.ResetTrigger("Virar");
             grafico.SetTrigger("Reto");
+        }
+    }
+    void LimitandoTela()
+    {
+        // isso aqui deveria estar no codigo da tela
+        // pra ia tbm não sair. E pra não ter codigo redundante hehe
+        if (transform.position.y <= 24.9f || transform.position.y >= -7.2f)
+        {
+            float YPos = Mathf.Clamp(transform.position.y, -7.2f, 24.9f);
+            transform.position = new Vector3(transform.position.x, YPos, transform.position.z);
         }
     }
 

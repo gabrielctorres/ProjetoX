@@ -10,19 +10,16 @@ public class PlayerScript : Airplane
     public Animator fuelAlert;
     public Text txtPontos;  
 
-    private void Start()
+    protected override void Start()
     {
         base.Start();
         Input.gyro.enabled = true;
     }
 
-    void Update()
+    protected override void Update()
     {
         base.Update();
-
-        LimitandoTela();
         txtPontos.text = pontos.ToString();
-        Debug.Log("Teste");
  
     }
 
@@ -31,38 +28,27 @@ public class PlayerScript : Airplane
 
         fuelImg.fillAmount = fuel;
         bool fuelAcabando = fuel <= 0.29;
-        fuelAlert.SetBool("acabando", fuelAcabando);
-        Debug.Log("AAA");
+       // fuelAlert.SetBool("acabando", fuelAcabando);
 
     }
 
     public override void Move()
     {
-        transform.Translate(Vector2.right * velocidade * Time.deltaTime);
 
         if(Input.gyro.enabled)
         {
-            transform.Rotate(new Vector3(0, 0, Input.acceleration.x));
+            transform.Rotate(new Vector3(0, 0, Input.acceleration.x) * rotationSpeed);
         }
         
         if (jbScript.usouBotao)
         {
             Vector3 direction = jbScript.InputDirection;
-            transform.Rotate(new Vector3(0, 0, direction.y));
+            transform.Rotate(new Vector3(0, 0, direction.y) * rotationSpeed);
+            Debug.Log(direction.y);
         } 
     }
 
-    void LimitandoTela()
-    {
-        // isso aqui deveria estar no codigo da tela
-        // pra ia tbm não sair. E pra não ter codigo redundante
-        if (transform.position.y <= 24.9f || transform.position.y >= -7.2f)
-        {
-            float YPos = Mathf.Clamp(transform.position.y, -7.2f, 24.9f);
-            transform.position = new Vector3(transform.position.x, YPos, transform.position.z);
-        }
-    }
-
+    
     // Colisao
     private void OnTriggerEnter2D(Collider2D collision)
     {
