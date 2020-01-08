@@ -5,13 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Resources/Scenes/0.unity
+    guid: 6fadd61164b1e568484bef30771a017e
   - enabled: 1
     path: Assets/Resources/Scenes/1.unity
     guid: ede0b636dad7f2d45ba4ead5b2519803
-  - enabled: 0
-    path: Assets/Resources/Scenes/seila.unity
-    guid: 530343fe4ea0078949e0e873ac800a92
   m_configObjects: {}
