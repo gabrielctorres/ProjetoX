@@ -44,8 +44,15 @@ public class PlayerScript : Airplane
         {
             Vector3 direction = jbScript.InputDirection;
             transform.Rotate(new Vector3(0, 0, direction.y) * rotationSpeed);
-            Debug.Log(direction.y);
         } 
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            transform.Rotate(new Vector3(0, 0, rotationSpeed));
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            transform.Rotate(new Vector3(0, 0, -rotationSpeed));
+        }
     }
 
     
@@ -61,7 +68,7 @@ public class PlayerScript : Airplane
                 fuel += 0.1f;
                 break;
         }
-        Destroy(collision);
+        Destroy(collision.gameObject);
     }
 
 }

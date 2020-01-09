@@ -5,9 +5,9 @@ using UnityEngine;
 public abstract class Airplane : MonoBehaviour
 {
     private float Timer = 3f;
-    protected float velocidade  = 10f;   
+    protected float velocidade  = 8f;   
     protected float fallSpeed = 0.6f;
-    protected float rotationSpeed = 5f;
+    protected float rotationSpeed = 3f;
     protected float fuel = 1f;
     protected Animator grafico;
     protected Rigidbody2D rb;
@@ -51,22 +51,25 @@ public abstract class Airplane : MonoBehaviour
 
     public abstract void Move();
 
+    public float GetRotation()
+    {
+        return transform.rotation.eulerAngles.z;
+    }
     private void fall(){
         
-        float rotation = transform.rotation.eulerAngles.z;
-        
+        float rotation = this.GetRotation();
         //esquerda ou direita?
         if(rotation < 90 || rotation > 280)
         {
-            transform.Rotate(new Vector3(0, 0, -fallSpeed));
+            transform.Rotate(new Vector3(0, 0, -fallSpeed), Space.Self);
         }else
         {
-            transform.Rotate(new Vector3(0, 0, fallSpeed));
+            transform.Rotate(new Vector3(0, 0, fallSpeed), Space.Self);
         }
     }
     protected void Animation()
     {
-        float rotation = transform.rotation.eulerAngles.z;
+        float rotation = GetRotation();
 
         if (rotation >= 260 && rotation <= 360)
         {

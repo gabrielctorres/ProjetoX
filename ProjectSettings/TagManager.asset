@@ -8,6 +8,7 @@ TagManager:
   - ColisorCima
   - Gasolina
   - Moeda
+  - Enemy
   layers:
   - Default
   - TransparentFX
