@@ -975,7 +975,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 83
+  m_SortingOrder: 5
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -1082,8 +1082,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2.5
-      minScalar: 1.5
+      scalar: 2
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1136,7 +1136,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 2
-      minScalar: 0.5
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1948,17 +1948,17 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
+          time: 0.035490606
           value: 1
-          inSlope: 0
-          outSlope: 0
+          inSlope: 3.3233125
+          outSlope: 3.3233125
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0.04978355
         - serializedVersion: 3
-          time: 0.98464966
-          value: 0.5638275
+          time: 1
+          value: 0.031913757
           inSlope: 1
           outSlope: 1
           tangentMode: 0
@@ -2262,7 +2262,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -2341,22 +2341,22 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 1
+          time: 0.17745209
+          value: 0.15957642
+          inSlope: 2.2420888
+          outSlope: 2.2420888
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0.12690456
         - serializedVersion: 3
           time: 1
           value: 1
-          inSlope: 1
-          outSlope: 0
+          inSlope: 2.5475087
+          outSlope: 2.5475087
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0.08861912
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -6542,7 +6542,6 @@ GameObject:
   m_Component:
   - component: {fileID: 466532694}
   - component: {fileID: 466532695}
-  - component: {fileID: 466532696}
   m_Layer: 0
   m_Name: SpawnPredios
   m_TagString: Untagged
@@ -6558,7 +6557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466532693}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43.3, y: 0, z: 1}
+  m_LocalPosition: {x: 43.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 960865423}
@@ -6585,19 +6584,6 @@ MonoBehaviour:
   - {fileID: 6873514781912947974, guid: 95ca98f68961af84cbc9e3498bbce1e7, type: 3}
   dropChance: 100
   speedSpawn: 0.5
---- !u!114 &466532696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466532693}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd7b5409cfe06514eb3696e8a33a606a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  positionPlayer: {fileID: 75142836}
 --- !u!1 &478453106
 GameObject:
   m_ObjectHideFlags: 0
@@ -6763,7 +6749,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 7, z: -10}
+  m_LocalPosition: {x: 0, y: 7, z: -19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7238,8 +7224,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -806.7, y: -381.7}
-  m_SizeDelta: {x: 142.5, y: 142.5}
+  m_AnchoredPosition: {x: -690, y: -280}
+  m_SizeDelta: {x: 161, y: 161}
   m_Pivot: {x: 0.49999988, y: 0.4999997}
 --- !u!114 &775343960
 MonoBehaviour:
@@ -7705,7 +7691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 710, y: -400}
+  m_AnchoredPosition: {x: 710, y: -280}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &981822859
@@ -7921,11 +7907,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7822580865426471463, guid: 5ca84d7a647d03f4aa3443c26a763830,
-        type: 3}
-      propertyPath: m_Name
-      value: SettingsManager
-      objectReference: {fileID: 0}
     - target: {fileID: 7822580865426471461, guid: 5ca84d7a647d03f4aa3443c26a763830,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8001,6 +7982,11 @@ PrefabInstance:
       propertyPath: stMasterManager.Array.data[5]
       value: 
       objectReference: {fileID: 409459446}
+    - target: {fileID: 7822580865426471463, guid: 5ca84d7a647d03f4aa3443c26a763830,
+        type: 3}
+      propertyPath: m_Name
+      value: SettingsManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ca84d7a647d03f4aa3443c26a763830, type: 3}
 --- !u!114 &1063641597 stripped
@@ -8688,7 +8674,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 548, y: 368}
+  m_AnchoredPosition: {x: 553, y: 368}
   m_SizeDelta: {x: 679.9, y: 181}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1301940444
@@ -8716,7 +8702,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 145
-    m_Alignment: 4
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -9747,7 +9733,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 519420031}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 94.95
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -10136,8 +10122,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.7, y: -0.2}
-  m_SizeDelta: {x: 56.09, y: 56.09}
+  m_AnchoredPosition: {x: -0.0000061989, y: -0.000024319}
+  m_SizeDelta: {x: 73, y: 73}
   m_Pivot: {x: 0.49999988, y: 0.4999997}
 --- !u!114 &2098141519
 MonoBehaviour:

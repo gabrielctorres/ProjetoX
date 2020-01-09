@@ -8,7 +8,7 @@ public class CameraScript : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(positionPlayer.position.x, positionPlayer.position.y, 0);
+        transform.position = new Vector3(positionPlayer.position.x, positionPlayer.position.y, -19f);
         LimitandoTela();
     }
 
