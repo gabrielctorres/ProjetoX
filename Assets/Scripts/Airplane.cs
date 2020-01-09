@@ -9,6 +9,7 @@ public abstract class Airplane : MonoBehaviour
     protected float fallSpeed = 0.6f;
     protected float rotationSpeed = 3f;
     protected float fuel = 1f;
+    protected int life;
     protected Animator grafico;
     protected Rigidbody2D rb;
 
