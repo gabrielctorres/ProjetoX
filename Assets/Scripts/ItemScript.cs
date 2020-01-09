@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class LootScript : MonoBehaviour
+public class ItemScript : MonoBehaviour
 {
     [System.Serializable]
     public class DropItens
