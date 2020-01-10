@@ -12,6 +12,7 @@ public abstract class Airplane : MonoBehaviour
     protected Animator grafico;
     protected Rigidbody2D rb;
 
+    protected float health = 100;
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,15 +39,28 @@ public abstract class Airplane : MonoBehaviour
     }
 
     protected void Moviment(){
+        
         transform.Translate(Vector2.right * velocidade * Time.deltaTime);
-
-        //está sempre caindo
         fall();
-
-        // se tem combustivel entao move
-        if(fuel >0){
+        if( fuel > 0 ){
             Move();
         }
+    }
+
+    public void TakeDamage (float damage) 
+    {
+        this.health -= damage;
+
+        if(this.health <= 0)
+        {
+            Die ();
+        }
+        Debug.Log ("ouch!!!");
+    }
+
+    private void Die ()
+    {
+        Destroy(gameObject);
     }
 
     public abstract void Move();

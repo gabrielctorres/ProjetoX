@@ -35,6 +35,14 @@ public class PlayerScript : Airplane
     public override void Move()
     {
 
+        if(transform.rotation.z < 0){
+            velocidade = 12;
+        }
+        else
+        {
+            velocidade = 8f;
+        }
+
         if(Input.gyro.enabled)
         {
             transform.Rotate(new Vector3(0, 0, Input.acceleration.x) * rotationSpeed);

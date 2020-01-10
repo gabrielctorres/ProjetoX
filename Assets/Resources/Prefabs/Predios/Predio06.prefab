@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2689016132596701091}
   m_Layer: 0
   m_Name: Predio06
-  m_TagString: Untagged
+  m_TagString: Predio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

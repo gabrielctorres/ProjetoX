@@ -13952,6 +13952,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  bomba: {fileID: 3603627823276742231, guid: 48d18562a98970e649bb104c316e13af, type: 3}
+  timeToShot: 15
+  nextTimeToShot: 0
 --- !u!61 &1596517060
 BoxCollider2D:
   m_ObjectHideFlags: 0

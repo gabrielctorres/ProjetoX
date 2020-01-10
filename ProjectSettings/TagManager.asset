@@ -9,6 +9,8 @@ TagManager:
   - Gasolina
   - Moeda
   - Enemy
+  - Bomba
+  - Predio
   layers:
   - Default
   - TransparentFX
