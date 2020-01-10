@@ -57,7 +57,7 @@ public class PlayerScript : Airplane
     }
     IEnumerator destruindoPlayer()
     {
-        yield return new WaitForSeconds(0.30f);
+        yield return new WaitForSeconds(explosaoPrefab.time);
         Destroy(this.gameObject);       
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("1");
