@@ -1,26 +1,27 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class PlayerScript : Airplane
 {
     int pontos = 0;
     public Image fuelImg;
     public Joybutton jbScript;
     public Animator fuelAlert;
-    public Text txtPontos;  
-
+    public Text txtPontos;
+    public ParticleSystem explosaoPrefab;
+    
     protected override void Start()
     {
         base.Start();
         Input.gyro.enabled = true;
+        life = 1;
     }
 
     protected override void Update()
     {
         base.Update();
-        txtPontos.text = pontos.ToString();
- 
+        txtPontos.text = pontos.ToString();        
     }
 
     protected override void FuelSystem(){
@@ -54,21 +55,41 @@ public class PlayerScript : Airplane
             transform.Rotate(new Vector3(0, 0, -rotationSpeed));
         }
     }
+    IEnumerator destruindoPlayer()
+    {
+        yield return new WaitForSeconds(0.30f);
+        Destroy(this.gameObject);       
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("1");
+    }
 
     
-    // Colisao
+    // Colisao Trigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (collision.tag)
         {
             case "Moeda":
-                pontos++;
+                pontos++;                
                 break;
             case "Gasolina":
-                fuel += 0.1f;
-                break;
+                fuel += 0.1f;               
+                break;  
         }
         Destroy(collision.gameObject);
     }
-
+    
+    //Colisao Sem Trigger
+    private void OnCollisionEnter2D(Collision2D collision2)
+    {
+        switch (collision2.gameObject.tag)
+        {
+            case "Predios":
+                life--;
+                ParticleSystem  explosaoInstanciada = Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
+                explosaoInstanciada.Play();               
+                StartCoroutine("destruindoPlayer");
+                break;
+        }
+    }
 }
