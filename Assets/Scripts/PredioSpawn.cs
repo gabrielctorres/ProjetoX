@@ -4,7 +4,6 @@ using UnityEngine;
 public class PredioSpawn : MonoBehaviour
 {    
     public List<GameObject> listaPredios = new List<GameObject>();
-    public int dropChance;
     public float speedSpawn;
     Vector2 posicaoSpawn;
     GameObject predioAux;
