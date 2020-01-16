@@ -24,5 +24,5 @@ public class ButtonsScrpts : MonoBehaviour
     public void ConfirmExitGame() => Application.Quit();
 
     // load level
-    public void LoadLevel() => SceneManager.LoadScene(1);
+    public void LoadLevel() => SceneManager.LoadScene("1");
 }
