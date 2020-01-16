@@ -8,11 +8,12 @@ public class Settings : MonoBehaviour
     public static AudioClip auClipSfx0; // sfx audio
     public GameObject[] stMasterManager; // settings master manager
     public static bool check_Music; // check play music
-
+    public PlayerScript pScript;
     void Start()
     {
         SaveStates(); // load states
         AudioManager(); // load audio
+        stMasterManager[2].GetComponent<Toggle>().isOn = true;
     }
 
     void Update()
@@ -81,6 +82,17 @@ public class Settings : MonoBehaviour
                 stMasterManager[1].GetComponent<AudioSource>().volume = stMasterManager[5].GetComponent<Slider>().value;
                 PlayerPrefs.SetFloat("VOLUMEAUDIO", stMasterManager[5].GetComponent<Slider>().value);
                 PlayerPrefs.Save();
+                break;
+            //giroscopio
+            case 4:
+                if(stMasterManager[6].GetComponent<Toggle>().isOn == false)
+                {
+                    pScript.giroscopio = false;
+                }
+                else
+                {
+                    pScript.giroscopio = true;
+                }
                 break;
         }
     }

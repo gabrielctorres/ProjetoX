@@ -75,15 +75,19 @@ public abstract class Airplane : MonoBehaviour
         if (rotation >= 260 && rotation <= 360)
         {
             grafico.ResetTrigger("Reto");
+            grafico.ResetTrigger("Virar2");
             grafico.SetTrigger("Virar");
         }
-        else if (rotation < 260 && rotation > 180)
+        else if (rotation <= 260 && rotation >= 180)
         {
-            
+            grafico.ResetTrigger("Reto");
+            grafico.ResetTrigger("Virar");
+            grafico.SetTrigger("Virar2");
         }
         else
         {
             grafico.ResetTrigger("Virar");
+            grafico.ResetTrigger("Virar2");
             grafico.SetTrigger("Reto");
         }
     }

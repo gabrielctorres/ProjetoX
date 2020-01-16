@@ -10,11 +10,11 @@ public class PlayerScript : Airplane
     public Animator fuelAlert;
     public Text txtPontos;
     public ParticleSystem explosaoPrefab;
-    
+    public bool giroscopio = true;
     protected override void Start()
     {
         base.Start();
-        Input.gyro.enabled = true;
+        Input.gyro.enabled = giroscopio;
         life = 1;
     }
 
