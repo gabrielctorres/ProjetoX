@@ -90,6 +90,11 @@ public class PlayerScript : Airplane
                 explosaoInstanciada.Play();               
                 StartCoroutine("destruindoPlayer");
                 break;
+            case "Enemy":
+                ParticleSystem explosaoInstanciada2 = Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
+                explosaoInstanciada2.Play();
+                StartCoroutine("destruindoPlayer");
+                break;
         }
     }
 }
