@@ -13898,8 +13898,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listaItens:
+<<<<<<< Updated upstream
   - {fileID: 6957686796430148191, guid: 0c0503617eb64dc4d9cfc47206e0896c, type: 3}
   - {fileID: 8986930831145881187, guid: 5ed2564eb31039e42a4933218407b15a, type: 3}
+=======
+  - {fileID: 8986930831145881187, guid: 5ed2564eb31039e42a4933218407b15a, type: 3}
+  - {fileID: 6957686796430148191, guid: 0c0503617eb64dc4d9cfc47206e0896c, type: 3}
+>>>>>>> Stashed changes
   speedSpawn: 1
 --- !u!1 &1574244164
 GameObject:
@@ -13977,10 +13982,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1596517064}
   - component: {fileID: 1596517063}
-  - component: {fileID: 1596517062}
   - component: {fileID: 1596517061}
   - component: {fileID: 1596517060}
   - component: {fileID: 1596517059}
+  - component: {fileID: 1596517062}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -14018,7 +14023,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 25.58141, y: 17.2}
+    oldSize: {x: 22.5, y: 10.140381}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -14058,7 +14063,7 @@ Animator:
   m_GameObject: {fileID: 1596517058}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 951264a2f92fa1b478998314aa3143a2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2fec7810def33b54a84c4373477ea044, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14105,7 +14110,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 4b01148aac87eb343ad6adcc8c00a0f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d17bda4c582c5a54b9121c63f31604ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
