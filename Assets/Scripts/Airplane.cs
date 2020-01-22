@@ -7,17 +7,17 @@ public abstract class Airplane : MonoBehaviour
     private float Timer = 3f;
     protected float velocidade  = 8f;   
     protected float fallSpeed = 0.6f;
-    protected float rotationSpeed = 3f;
+    protected float rotationSpeed = 5f;
     protected float fuel = 1f;
-    protected int life;
     protected Animator grafico;
     protected Rigidbody2D rb;
 
+    public ParticleSystem explosaoPrefab;
+    protected float health = 100;
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         grafico = GetComponent<Animator>();
-
     }
     
     protected virtual void Update()
@@ -30,7 +30,6 @@ public abstract class Airplane : MonoBehaviour
 
     protected virtual void FuelSystem(){
         Timer -= Time.deltaTime;
-        
         if(Timer < 0)
         {
             fuel -= 0.02f;
@@ -40,14 +39,29 @@ public abstract class Airplane : MonoBehaviour
 
     protected void Moviment(){
         transform.Translate(Vector2.right * velocidade * Time.deltaTime);
-
-        //está sempre caindo
         fall();
-
-        // se tem combustivel entao move
-        if(fuel >0){
+        if( fuel > 0 ){
             Move();
         }
+    }
+
+    public void TakeDamage (float damage) 
+    {
+        this.health -= damage;
+
+        if(this.health <= 0)
+        {
+            Die ();
+        }
+        Debug.Log ("ouch!!!");
+    }
+
+    private void Die ()
+    {
+        ParticleSystem  explosaoInstanciada = Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
+        explosaoInstanciada.Play(); 
+        Destroy(gameObject);
+        Destroy(explosaoInstanciada, 1f);
     }
 
     public abstract void Move();
@@ -101,6 +115,14 @@ public abstract class Airplane : MonoBehaviour
             transform.position = new Vector3(transform.position.x, YPos, transform.position.z);
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D collision2)
+    {
+        switch (collision2.gameObject.tag)
+        {
+            case "Predios":
+                TakeDamage(this.health);
+                break;
+        }
+    }
     
 }

@@ -92,11 +92,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3603627823276742230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ff4e4ec7fd8005c7bb9562aa9a51a24, type: 3}
+  m_Script: {fileID: 11500000, guid: fb3275985d7c261cd8c079bcc2f631cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  target: 
+  explosaoPrefab: {fileID: 826497562850730593, guid: f9bc2d6e7379f344485b040dc5b40541,
+    type: 3}
+  target: Player
 --- !u!61 &3603627823276742226
 BoxCollider2D:
   m_ObjectHideFlags: 0

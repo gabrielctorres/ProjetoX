@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +7,7 @@ public class Bomba : MonoBehaviour
 
     public float damage = 30f;
     private float velocidade = 10f;
+    public ParticleSystem explosaoPrefab;
 
     public string target;
     
@@ -48,7 +49,10 @@ public class Bomba : MonoBehaviour
 
     void Die ()
     {
+        ParticleSystem  explosaoInstanciada = Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
+        explosaoInstanciada.Play(); 
         Destroy(gameObject);
+        Destroy(explosaoInstanciada, 1f);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

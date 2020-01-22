@@ -9,13 +9,11 @@ public class PlayerScript : Airplane
     public Joybutton jbScript;
     public Animator fuelAlert;
     public Text txtPontos;
-    public ParticleSystem explosaoPrefab;
     public bool giroscopio = true;
     protected override void Start()
     {
         base.Start();
         Input.gyro.enabled = giroscopio;
-        life = 1;
     }
 
     protected override void Update()
@@ -36,6 +34,14 @@ public class PlayerScript : Airplane
     public override void Move()
     {
 
+        if(transform.rotation.z < 0){
+            velocidade = 12;
+        }
+        else
+        {
+            velocidade = 8f;
+        }
+
         if(Input.gyro.enabled)
         {
             transform.Rotate(new Vector3(0, 0, Input.acceleration.x) * rotationSpeed);
@@ -46,23 +52,7 @@ public class PlayerScript : Airplane
             Vector3 direction = jbScript.InputDirection;
             transform.Rotate(new Vector3(0, 0, direction.y) * rotationSpeed);
         } 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            transform.Rotate(new Vector3(0, 0, rotationSpeed));
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            transform.Rotate(new Vector3(0, 0, -rotationSpeed));
-        }
     }
-    IEnumerator destruindoPlayer()
-    {
-        yield return new WaitForSeconds(explosaoPrefab.time);
-        Destroy(this.gameObject);       
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("1");
-    }
-
     
     // Colisao Trigger
     private void OnTriggerEnter2D(Collider2D collision)
@@ -80,16 +70,5 @@ public class PlayerScript : Airplane
     }
     
     //Colisao Sem Trigger
-    private void OnCollisionEnter2D(Collision2D collision2)
-    {
-        switch (collision2.gameObject.tag)
-        {
-            case "Predios":
-                life--;
-                ParticleSystem  explosaoInstanciada = Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
-                explosaoInstanciada.Play();               
-                StartCoroutine("destruindoPlayer");
-                break;
-        }
-    }
+    
 }
