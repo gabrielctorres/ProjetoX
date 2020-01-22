@@ -18,10 +18,10 @@ public class ItemSpawn : MonoBehaviour
     void spawnPredio() { 
     
         int predioSorteado = Random.Range(0, listaItens.Count);
-        posicaoSpawn.y = 4;
+        posicaoSpawn.y = -7;
         if (ItemAux != null)
         {
-            int distancia = Random.Range(40, 160);
+            int distancia = Random.Range(20, 160);
             SpriteRenderer spritePredio = ItemAux.GetComponent<SpriteRenderer>();
             posicaoSpawn.x += spritePredio.size.x * transform.localScale.x + distancia;
             

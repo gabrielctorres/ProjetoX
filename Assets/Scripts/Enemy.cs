@@ -23,7 +23,7 @@ public class Enemy : Airplane
 
    private void findPlayer()
    {
-        Vector3 playerPosition = player.transform.position;
+        Vector3 playerPosition = (player != null) ? player.transform.position : Vector3.up;
         Vector3 direction = playerPosition - transform.position;
         float distance = direction.magnitude;
 

@@ -10,6 +10,7 @@ TagManager:
   - Moeda
   - Enemy
   - Predios
+  - Baixo
   layers:
   - Default
   - TransparentFX
