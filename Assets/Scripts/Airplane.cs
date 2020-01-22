@@ -25,7 +25,6 @@ public abstract class Airplane : MonoBehaviour
         FuelSystem();
         Moviment();
         Animation();
-        LimitandoTela();
     }
 
     protected virtual void FuelSystem(){
@@ -39,6 +38,10 @@ public abstract class Airplane : MonoBehaviour
 
     protected void Moviment(){
         transform.Translate(Vector2.right * velocidade * Time.deltaTime);
+        //limita tela
+        transform.position = new Vector3(transform.position.x,
+                                Mathf.Clamp(transform.position.y, -7.2f, 24f),
+                                transform.position.z);
         fall();
         if( fuel > 0 ){
             Move();
@@ -103,16 +106,6 @@ public abstract class Airplane : MonoBehaviour
             grafico.ResetTrigger("Virar");
             grafico.ResetTrigger("Virar2");
             grafico.SetTrigger("Reto");
-        }
-    }
-    void LimitandoTela()
-    {
-        // isso aqui deveria estar no codigo da tela
-        // pra ia tbm não sair. E pra não ter codigo redundante hehe
-        if (transform.position.y <= 24.9f || transform.position.y >= -7.2f)
-        {
-            float YPos = Mathf.Clamp(transform.position.y, -7.2f, 24.9f);
-            transform.position = new Vector3(transform.position.x, YPos, transform.position.z);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision2)

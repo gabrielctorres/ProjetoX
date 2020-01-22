@@ -34,13 +34,7 @@ public class PlayerScript : Airplane
     public override void Move()
     {
 
-        if(transform.rotation.z < 0){
-            velocidade = 12;
-        }
-        else
-        {
-            velocidade = 8f;
-        }
+        
 
         if(Input.gyro.enabled)
         {
@@ -66,8 +60,9 @@ public class PlayerScript : Airplane
                 fuel += 0.1f;               
                 break;  
         }
-        Destroy(collision.gameObject);
+        if(collision.tag != "MundoBordas") Destroy(collision.gameObject);
     }
+
     
     //Colisao Sem Trigger
     

@@ -11,6 +11,9 @@ TagManager:
   - Enemy
   - Predios
   - Baixo
+  - Bomba
+  - MundoBordas
+  - Confiner
   layers:
   - Default
   - TransparentFX

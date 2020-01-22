@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Parallax : MonoBehaviour
 {
@@ -22,7 +23,9 @@ public class Parallax : MonoBehaviour
         float dist = (cam.transform.position.x * paralaxEffect);
 
         transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
-
+        CinemachineConfiner confiner = GameObject.FindGameObjectWithTag("Confiner").
+                                        GetComponent<CinemachineConfiner>();
+        confiner.InvalidatePathCache();
         if(temp > startPos + length) startPos += length;
         else if(temp < startPos - length) startPos -= length;
     }
