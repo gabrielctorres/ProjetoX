@@ -10930,6 +10930,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8244038783517604950, guid: 81e249a112ed54850b9a93cacb7a3263,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244038783517604950, guid: 81e249a112ed54850b9a93cacb7a3263,
+        type: 3}
+      propertyPath: paralaxEffect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8244038783517604951, guid: 81e249a112ed54850b9a93cacb7a3263,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -10984,16 +10994,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
       value: -1.4294025
-      objectReference: {fileID: 0}
-    - target: {fileID: 8244038783517604950, guid: 81e249a112ed54850b9a93cacb7a3263,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8244038783517604950, guid: 81e249a112ed54850b9a93cacb7a3263,
-        type: 3}
-      propertyPath: paralaxEffect
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -12362,11 +12362,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7822580865426471463, guid: 5ca84d7a647d03f4aa3443c26a763830,
-        type: 3}
-      propertyPath: m_Name
-      value: SettingsManager
-      objectReference: {fileID: 0}
     - target: {fileID: 7822580864750177728, guid: 5ca84d7a647d03f4aa3443c26a763830,
         type: 3}
       propertyPath: m_Volume
@@ -12462,6 +12457,11 @@ PrefabInstance:
       propertyPath: pScript
       value: 
       objectReference: {fileID: 75142837}
+    - target: {fileID: 7822580865426471463, guid: 5ca84d7a647d03f4aa3443c26a763830,
+        type: 3}
+      propertyPath: m_Name
+      value: SettingsManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ca84d7a647d03f4aa3443c26a763830, type: 3}
 --- !u!114 &1063641597 stripped
@@ -13627,7 +13627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listaItens:
   - {fileID: 6957686796430148191, guid: 0c0503617eb64dc4d9cfc47206e0896c, type: 3}
-  - {fileID: 8986930831145881187, guid: 5ed2564eb31039e42a4933218407b15a, type: 3}
+  - {fileID: 8986930831145881187, guid: 3bb436b15486e3dbaac91874b7c58ace, type: 3}
   speedSpawn: 1
 --- !u!1 &1574244164
 GameObject:
@@ -15128,16 +15128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1821670830}
     m_Modifications:
-    - target: {fileID: 3042583858732767228, guid: 06694c861564fd645be553f2c8c64948,
-        type: 3}
-      propertyPath: m_Name
-      value: PanelSettings
-      objectReference: {fileID: 0}
-    - target: {fileID: 3042583858732767228, guid: 06694c861564fd645be553f2c8c64948,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3042583857951333306, guid: 06694c861564fd645be553f2c8c64948,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -15163,6 +15153,16 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1063641597}
+    - target: {fileID: 3042583858732767228, guid: 06694c861564fd645be553f2c8c64948,
+        type: 3}
+      propertyPath: m_Name
+      value: PanelSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042583858732767228, guid: 06694c861564fd645be553f2c8c64948,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3042583858740887069, guid: 06694c861564fd645be553f2c8c64948,
         type: 3}
       propertyPath: m_AnchorMax.y

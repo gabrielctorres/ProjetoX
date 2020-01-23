@@ -33,7 +33,7 @@ public class Enemy : Airplane
             if(hit != null && 
                 hit.collider != null ){
 
-                Debug.Log(hit.collider.tag);
+                //Debug.Log(hit.collider.tag);
                 if(hit.collider.tag == "Player" && Time.time >= nextTimeToShot)
                 {
                     nextTimeToShot = Time.time +  timeToShot;
