@@ -6,11 +6,13 @@ public class Enemy : Airplane
 {
    public GameObject player;
    public Bomba bomba;
+   public GameObject spawnBomba;
    
    public float timeToShot = 10f;
    public float nextTimeToShot = 0;
    protected void Start()
    {
+       velocidade = 5f;
        base.Start();
        player = GameObject.FindWithTag("Player");
    }
@@ -37,7 +39,7 @@ public class Enemy : Airplane
                 if(hit.collider.tag == "Player" && Time.time >= nextTimeToShot)
                 {
                     nextTimeToShot = Time.time +  timeToShot;
-                    Instantiate(bomba, transform.position, transform.rotation);
+                    Instantiate(bomba, spawnBomba.transform.position, transform.rotation);
                     bomba.SetTarget("Player");
                 }
             }

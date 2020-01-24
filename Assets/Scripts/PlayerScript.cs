@@ -10,6 +10,12 @@ public class PlayerScript : Airplane
     public Animator fuelAlert;
     public Text txtPontos;
     public bool giroscopio = true;
+
+    public GameObject Bullet;
+    public GameObject spawnBullet;
+    public float timeToShot = -1f;
+    public float nextTimeToShot = 0;
+
     protected override void Start()
     {
         base.Start();
@@ -46,6 +52,15 @@ public class PlayerScript : Airplane
             Vector3 direction = jbScript.InputDirection;
             transform.Rotate(new Vector3(0, 0, direction.y) * rotationSpeed);
         } 
+    }
+
+    public void btnAtirar()
+    {
+        if(Time.time >= nextTimeToShot)
+        {
+            nextTimeToShot = Time.time + timeToShot;
+            Instantiate(Bullet,spawnBullet.transform.position,transform.rotation);
+        }
     }
     
     // Colisao Trigger

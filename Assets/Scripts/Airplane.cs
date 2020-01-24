@@ -115,6 +115,9 @@ public abstract class Airplane : MonoBehaviour
             case "Predios":
                 TakeDamage(this.health);
                 break;
+            case "Enemy":
+                TakeDamage(this.health);
+                break;
         }
     }
     

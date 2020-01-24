@@ -20,7 +20,7 @@ public class BalaoScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distancia =  (playerScript != null ) ?Vector3.Distance(playerScript.transform.position, transform.position) : 0;        
+        distancia =  (playerScript != null ) ?Vector3.Distance(playerScript.transform.position, transform.position) : 10;        
         MovimentarBalao();
     }
 
