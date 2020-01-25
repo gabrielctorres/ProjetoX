@@ -14,6 +14,8 @@ public class PlayerScript : Airplane
     {
         base.Start();
         Input.gyro.enabled = giroscopio;
+        rotationSpeed = 5f;
+        velocidade = 10f;
     }
 
     protected override void Update()

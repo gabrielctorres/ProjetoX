@@ -7,7 +7,7 @@ public abstract class Airplane : MonoBehaviour
     private float Timer = 3f;
     protected float velocidade  = 8f;   
     protected float fallSpeed = 0.6f;
-    protected float rotationSpeed = 5f;
+    protected float rotationSpeed = 3f;
     protected float fuel = 1f;
     protected Animator grafico;
     protected Rigidbody2D rb;
@@ -40,7 +40,7 @@ public abstract class Airplane : MonoBehaviour
         transform.Translate(Vector2.right * velocidade * Time.deltaTime);
         //limita tela
         transform.position = new Vector3(transform.position.x,
-                                Mathf.Clamp(transform.position.y, -7.2f, 24f),
+                                Mathf.Clamp(transform.position.y, -6f, 30f),
                                 transform.position.z);
         fall();
         if( fuel > 0 ){
