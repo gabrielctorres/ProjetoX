@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2708720410485291370}
   - component: {fileID: 2708720410485291373}
   - component: {fileID: 69714345012641608}
+  - component: {fileID: 256659232}
+  - component: {fileID: 1769304509051121129}
   m_Layer: 0
   m_Name: Predio03
   m_TagString: Predios
@@ -69,13 +71,18 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< Updated upstream
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: f9ee372fdd3b0cb4b912a40a1aaa19b2, type: 3}
+=======
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 0b0ee43d8e644e74f965ebb7c923fc3f, type: 3}
+>>>>>>> Stashed changes
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.76, y: 4.56}
+  m_Size: {x: 3.2, y: 4.66}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -99,7 +106,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3.2, y: 4.66}
-    newSize: {x: 2.76, y: 4.56}
+    newSize: {x: 3.2, y: 4.66}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -107,3 +114,43 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2, y: 4.66}
   m_EdgeRadius: 0
+--- !u!95 &256659232
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2708720410485291372}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7056926a1ba7bbb489a7bfb85d7a12ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1769304509051121129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2708720410485291372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11cb5d084f238eb45826b1ae3f8511b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationPredio1: {fileID: 4836926476697828094, guid: 809333bd9dc03014983bbcbd50222d8d,
+    type: 3}
+  animationPredio2: {fileID: 1905396623, guid: a1d651f1f2d8134439bb7be30f5c26bb, type: 3}
+  animationPredio3: {fileID: 256659232}
+  animationPredio4: {fileID: 738505171406499359, guid: da29a057dac90984a9d3d7db1dee758d,
+    type: 3}
+  animationPredio5: {fileID: 1358773274, guid: 3e0a00b02c37c14418549ac3e65b3906, type: 3}
+  animationPredio6: {fileID: 2300305384348990225, guid: 95ca98f68961af84cbc9e3498bbce1e7,
+    type: 3}

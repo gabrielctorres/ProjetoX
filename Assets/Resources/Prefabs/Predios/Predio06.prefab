@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 883034977355838770}
   - component: {fileID: 6004071757145286179}
   - component: {fileID: 2689016132596701091}
+  - component: {fileID: 2300305384348990225}
+  - component: {fileID: 2841829176691061113}
   m_Layer: 0
   m_Name: Predio06
   m_TagString: Predios
@@ -71,13 +73,18 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< Updated upstream
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 56311c4676da63147a4b1be8f729be29, type: 3}
+=======
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 8168db49fb99875408cb850317aa8704, type: 3}
+>>>>>>> Stashed changes
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.76, y: 4.56}
+  m_Size: {x: 1.16, y: 4.66}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,7 +108,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.16, y: 4.66}
-    newSize: {x: 2.76, y: 4.56}
+    newSize: {x: 1.16, y: 4.66}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -127,7 +134,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.16, y: 4.66}
-    newSize: {x: 2.76, y: 4.56}
+    newSize: {x: 1.16, y: 4.66}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -153,7 +160,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.16, y: 4.66}
-    newSize: {x: 2.76, y: 4.56}
+    newSize: {x: 1.16, y: 4.66}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -161,3 +168,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45667642, y: 0.38320947}
   m_EdgeRadius: 0
+--- !u!95 &2300305384348990225
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873514781912947974}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e79a106705bc60b469fa4cae6f00be54, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2841829176691061113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873514781912947974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11cb5d084f238eb45826b1ae3f8511b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationPredio1: {fileID: 4836926476697828094, guid: 809333bd9dc03014983bbcbd50222d8d,
+    type: 3}
+  animationPredio2: {fileID: 1905396623, guid: a1d651f1f2d8134439bb7be30f5c26bb, type: 3}
+  animationPredio3: {fileID: 256659232, guid: 4a47fe83d2e0f514196bb41a2606a33b, type: 3}
+  animationPredio4: {fileID: 738505171406499359, guid: da29a057dac90984a9d3d7db1dee758d,
+    type: 3}
+  animationPredio5: {fileID: 1358773274, guid: 3e0a00b02c37c14418549ac3e65b3906, type: 3}
+  animationPredio6: {fileID: 2300305384348990225}

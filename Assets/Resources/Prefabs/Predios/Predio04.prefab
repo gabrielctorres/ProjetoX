@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5542102546635052804}
   - component: {fileID: 6390487236467321909}
   - component: {fileID: 6008707658720861604}
+  - component: {fileID: 738505171406499359}
+  - component: {fileID: -5398380891075496184}
   m_Layer: 0
   m_Name: Predio04
   m_TagString: Predios
@@ -70,8 +72,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< Updated upstream
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: ce2e91fdc78e40a4fa999b6295165ae3, type: 3}
+=======
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 6b814b1ee1cd1924788c40f158edd007, type: 3}
+>>>>>>> Stashed changes
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,3 +138,42 @@ PolygonCollider2D:
       - {x: 1.38, y: -2.28}
       - {x: 1.38, y: -0.83}
       - {x: 0.87, y: -0.83}
+--- !u!95 &738505171406499359
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5542102546635052805}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb9c63070b7bee640a0ca97da1b6b874, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5398380891075496184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5542102546635052805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11cb5d084f238eb45826b1ae3f8511b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationPredio1: {fileID: 4836926476697828094, guid: 809333bd9dc03014983bbcbd50222d8d,
+    type: 3}
+  animationPredio2: {fileID: 1905396623, guid: a1d651f1f2d8134439bb7be30f5c26bb, type: 3}
+  animationPredio3: {fileID: 256659232, guid: 4a47fe83d2e0f514196bb41a2606a33b, type: 3}
+  animationPredio4: {fileID: 738505171406499359}
+  animationPredio5: {fileID: 1358773274, guid: 3e0a00b02c37c14418549ac3e65b3906, type: 3}
+  animationPredio6: {fileID: 2300305384348990225, guid: 95ca98f68961af84cbc9e3498bbce1e7,
+    type: 3}
