@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Enemy : Airplane
 {
-   public GameObject player;
+   private GameObject player;
    public Bomba bomba;
-   public GameObject spawnBomba;
    
    public float timeToShot = 10f;
    public float nextTimeToShot = 0;
@@ -40,7 +39,7 @@ public class Enemy : Airplane
                 if(hit.collider.tag == "Player" && Time.time >= nextTimeToShot)
                 {
                     nextTimeToShot = Time.time +  timeToShot;
-                    Instantiate(bomba, spawnBomba.transform.position, transform.rotation);
+                    Instantiate(bomba, transform.position, transform.rotation);
                     bomba.SetTarget("Player");
                 }
             }

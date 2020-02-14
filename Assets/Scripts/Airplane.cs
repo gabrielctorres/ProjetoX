@@ -118,6 +118,11 @@ public abstract class Airplane : MonoBehaviour
             case "Enemy":
                 TakeDamage(this.health);
                 break;
+            case  "bullet":
+                if(collision2.gameObject.GetComponent<PlayerScript>() != null)
+                TakeDamage(10);
+                break;
+
         }
     }
     

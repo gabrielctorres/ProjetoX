@@ -14,6 +14,7 @@ TagManager:
   - Bomba
   - MundoBordas
   - Confiner
+  - bullet
   layers:
   - Default
   - TransparentFX

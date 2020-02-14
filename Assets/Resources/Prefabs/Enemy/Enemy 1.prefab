@@ -4900,7 +4900,8 @@ MonoBehaviour:
   explosaoPrefab: {fileID: 826497562850730593, guid: f9bc2d6e7379f344485b040dc5b40541,
     type: 3}
   player: {fileID: 0}
-  bomba: {fileID: 3603627823276742231, guid: 36059b97cd1411299ba0e2815581dc7d, type: 3}
+  bomba: {fileID: 3603627823276742231, guid: 48d18562a98970e649bb104c316e13af, type: 3}
+  spawnBomba: {fileID: 0}
   timeToShot: 10
   nextTimeToShot: 0
 --- !u!95 &5672734108639623322
