@@ -15,6 +15,7 @@ public class Enemy : Airplane
        velocidade = 5f;
        base.Start();
        player = GameObject.FindWithTag("Player");
+       velocidade = 8f;
    }
 
    public override void Move()
