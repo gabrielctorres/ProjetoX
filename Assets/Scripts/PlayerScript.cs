@@ -10,7 +10,7 @@ public class PlayerScript : Airplane
     public Animator fuelAlert;
     public Text txtPontos;
     public bool giroscopio = true;
-
+    
     public GameObject Bullet;
     public GameObject spawnBullet;
     public float timeToShot = -1f;
@@ -21,7 +21,7 @@ public class PlayerScript : Airplane
         base.Start();
         Input.gyro.enabled = giroscopio;
         rotationSpeed = 5f;
-        velocidade = 10f;
+        velocidade = 10f;        
     }
 
     protected override void Update()
@@ -29,7 +29,7 @@ public class PlayerScript : Airplane
         base.Update();
         txtPontos.text = pontos.ToString();        
     }
-
+    
     protected override void FuelSystem(){
         base.FuelSystem();
 

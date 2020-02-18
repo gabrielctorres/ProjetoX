@@ -656,6 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072dadd817c2b0b4f83a1b11ec39a774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  morreu: 0
   explosaoPrefab: {fileID: 826497562850730593, guid: f9bc2d6e7379f344485b040dc5b40541,
     type: 3}
   fuelImg: {fileID: 602266490}
@@ -7647,11 +7648,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7822580865426471463, guid: 5ca84d7a647d03f4aa3443c26a763830,
-        type: 3}
-      propertyPath: m_Name
-      value: SettingsManager
-      objectReference: {fileID: 0}
     - target: {fileID: 7822580864750177728, guid: 5ca84d7a647d03f4aa3443c26a763830,
         type: 3}
       propertyPath: m_Volume
@@ -7747,6 +7743,11 @@ PrefabInstance:
       propertyPath: pScript
       value: 
       objectReference: {fileID: 75142837}
+    - target: {fileID: 7822580865426471463, guid: 5ca84d7a647d03f4aa3443c26a763830,
+        type: 3}
+      propertyPath: m_Name
+      value: SettingsManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ca84d7a647d03f4aa3443c26a763830, type: 3}
 --- !u!114 &1063641597 stripped
@@ -8716,6 +8717,7 @@ MonoBehaviour:
   PanelPause: {fileID: 1447955370}
   PanelSettings: {fileID: 136958743}
   PlayerComponent: {fileID: 75142834}
+  playerScript: {fileID: 75142837}
 --- !u!4 &1380175943
 Transform:
   m_ObjectHideFlags: 0
@@ -10331,16 +10333,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1821670830}
     m_Modifications:
-    - target: {fileID: 3042583858732767228, guid: 06694c861564fd645be553f2c8c64948,
-        type: 3}
-      propertyPath: m_Name
-      value: PanelSettings
-      objectReference: {fileID: 0}
-    - target: {fileID: 3042583858732767228, guid: 06694c861564fd645be553f2c8c64948,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3042583857951333306, guid: 06694c861564fd645be553f2c8c64948,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -10366,6 +10358,16 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1063641597}
+    - target: {fileID: 3042583858732767228, guid: 06694c861564fd645be553f2c8c64948,
+        type: 3}
+      propertyPath: m_Name
+      value: PanelSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042583858732767228, guid: 06694c861564fd645be553f2c8c64948,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3042583858740887069, guid: 06694c861564fd645be553f2c8c64948,
         type: 3}
       propertyPath: m_AnchorMax.y

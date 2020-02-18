@@ -5,11 +5,26 @@ public class LevelManager : MonoBehaviour
 {
     public GameObject PanelGame, PanelPause, PanelSettings; // panels
     public GameObject PlayerComponent; // player
-
+    public PlayerScript playerScript;
     void Start()
     {
         // time start
         Time.timeScale = 1;
+    }
+
+
+    private void Update()
+    {
+        telaMorte();        
+    }
+    void telaMorte()
+    {
+        if (playerScript.morreu)
+        {
+            PanelGame.SetActive(false);
+            PanelPause.SetActive(true);
+            PanelSettings.SetActive(false);
+        }
     }
 
     #region PANELS MANAGER

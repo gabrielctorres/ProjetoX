@@ -11,7 +11,7 @@ public abstract class Airplane : MonoBehaviour
     protected float fuel = 1f;
     protected Animator grafico;
     protected Rigidbody2D rb;
-
+    public bool morreu = false;
     public ParticleSystem explosaoPrefab;
     protected float health = 100;
     protected virtual void Start()
@@ -61,6 +61,7 @@ public abstract class Airplane : MonoBehaviour
 
     private void Die ()
     {
+        morreu = true;
         ParticleSystem  explosaoInstanciada = Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
         explosaoInstanciada.Play(); 
         Destroy(gameObject);
