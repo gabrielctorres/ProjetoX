@@ -4786,6 +4786,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0}
   m_Children:
   - {fileID: 5672734107674180508}
+  - {fileID: 2738647243690418941}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
@@ -4850,7 +4851,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 2.4786546
+  m_Mass: 5.572398
   m_LinearDrag: 0
   m_AngularDrag: 0.08
   m_GravityScale: 0
@@ -4872,7 +4873,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.3501396, y: -0.757277}
+  m_Offset: {x: 0.2703457, y: 0.32252073}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4883,7 +4884,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17.16243, y: 3.6105824}
+  m_Size: {x: 19.322018, y: 7.2099066}
   m_EdgeRadius: 0
 --- !u!114 &5672734108639623327
 MonoBehaviour:
@@ -4899,9 +4900,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosaoPrefab: {fileID: 826497562850730593, guid: f9bc2d6e7379f344485b040dc5b40541,
     type: 3}
-  player: {fileID: 0}
+  health: 100
   bomba: {fileID: 3603627823276742231, guid: 48d18562a98970e649bb104c316e13af, type: 3}
-  spawnBomba: {fileID: 0}
+  spawnPoint: {fileID: 2738647243690418941}
   timeToShot: 10
   nextTimeToShot: 0
 --- !u!95 &5672734108639623322
@@ -4923,3 +4924,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &6394502841391132724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2738647243690418941}
+  m_Layer: 0
+  m_Name: spawnBomb
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2738647243690418941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394502841391132724}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.8, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 0}
+  m_Children: []
+  m_Father: {fileID: 5672734108639623316}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

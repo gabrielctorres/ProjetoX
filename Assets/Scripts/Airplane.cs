@@ -13,7 +13,7 @@ public abstract class Airplane : MonoBehaviour
     protected Rigidbody2D rb;
 
     public ParticleSystem explosaoPrefab;
-    protected float health = 100;
+    public float health = 100;
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -42,7 +42,7 @@ public abstract class Airplane : MonoBehaviour
         transform.position = new Vector3(transform.position.x,
                                 Mathf.Clamp(transform.position.y, -6f, 30f),
                                 transform.position.z);
-        fall();
+        
         if( fuel > 0 ){
             Move();
         }
@@ -73,7 +73,7 @@ public abstract class Airplane : MonoBehaviour
     {
         return transform.rotation.eulerAngles.z;
     }
-    private void fall(){
+    protected void fall(){
         
         float rotation = this.GetRotation();
         //esquerda ou direita?
@@ -117,10 +117,6 @@ public abstract class Airplane : MonoBehaviour
                 break;
             case "Enemy":
                 TakeDamage(this.health);
-                break;
-            case  "bullet":
-                if(collision2.gameObject.GetComponent<PlayerScript>() != null)
-                TakeDamage(10);
                 break;
 
         }

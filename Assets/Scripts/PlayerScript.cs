@@ -27,6 +27,7 @@ public class PlayerScript : Airplane
     protected override void Update()
     {
         base.Update();
+        fall();
         txtPontos.text = pontos.ToString();        
     }
 
@@ -58,11 +59,8 @@ public class PlayerScript : Airplane
 
     public void btnAtirar()
     {
-        if(Time.time >= nextTimeToShot)
-        {
-            nextTimeToShot = Time.time + timeToShot;
-            Instantiate(Bullet,spawnBullet.transform.position,transform.rotation);
-        }
+        Instantiate(Bullet,spawnBullet.transform.position,transform.rotation);
+        
     }
     
     // Colisao Trigger
