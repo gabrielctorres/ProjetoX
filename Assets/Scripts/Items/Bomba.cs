@@ -58,9 +58,9 @@ public class Bomba : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if(collision.transform.name == target)
+        Airplane target = collision.transform.GetComponent<Airplane>();
+        if(target != null)
         {
-            Airplane target = collision.transform.GetComponent<Airplane>();
             target.TakeDamage(this.damage);
             Die();
         }
