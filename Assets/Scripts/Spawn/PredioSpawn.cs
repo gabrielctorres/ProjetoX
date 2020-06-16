@@ -18,7 +18,6 @@ public class PredioSpawn : MonoBehaviour
     void spawnPredio() { 
     
         int predioSorteado = Random.Range(0, listaPredios.Count);
-        posicaoSpawn.y = 0;
         if (predioAux != null)
         {
             int distancia = Random.Range(20, 80);

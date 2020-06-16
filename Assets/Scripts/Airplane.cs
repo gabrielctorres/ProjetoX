@@ -5,26 +5,39 @@ using UnityEngine;
 public abstract class Airplane : MonoBehaviour
 {
     private float Timer = 3f;
-    protected float velocidade  = 8f;   
+    protected float velocidade  = 9f;   
     protected float fallSpeed = 0.6f;
-    protected float rotationSpeed = 3f;
+    protected float rotationSpeed = 200f;
     protected float fuel = 1f;
     protected Animator grafico;
     protected Rigidbody2D rb;
     public bool morreu = false;
     public ParticleSystem explosaoPrefab;
     public float health = 100;
+   public bool alive = true;
+   public float timeAlive = 0;
+   public float distanceTravelled = 0;
+   public Vector3 startPosition;
+    public float rotated;
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        //rb.centerOfMass = centerOfMass;
         grafico = GetComponent<Animator>();
+        startPosition = transform.position;
+
     }
     
-    protected virtual void Update()
+    protected virtual void FixedUpdate()
     {
-        FuelSystem();
-        Moviment();
-        Animation();
+        if(alive)
+        {
+            FuelSystem();
+            Moviment();
+            Animation();
+            timeAlive += Time.deltaTime;
+            distanceTravelled = Vector3.Distance(this.transform.position, startPosition);
+        }
     }
 
     protected virtual void FuelSystem(){
@@ -36,16 +49,28 @@ public abstract class Airplane : MonoBehaviour
         }
     }
 
+    protected void rotate(float rotation)
+    {
+        rotated += Mathf.Abs(rotation) ;
+        rb.angularVelocity = rotation * rotationSpeed;
+    }
+
     protected void Moviment(){
-        transform.Translate(Vector2.right * velocidade * Time.deltaTime);
-        //limita tela
+        
+
+        rb.velocity = transform.right * velocidade;
+        
         transform.position = new Vector3(transform.position.x,
                                 Mathf.Clamp(transform.position.y, -6f, 30f),
                                 transform.position.z);
         
-        if( fuel > 0 ){
+
+        Move();
+        /* if( fuel > 0 ){
             Move();
-        }
+        }else{  
+            fall();
+        } */
     }
 
     public void TakeDamage (float damage) 
@@ -56,16 +81,19 @@ public abstract class Airplane : MonoBehaviour
         {
             Die ();
         }
-        Debug.Log ("ouch!!!");
     }
 
     private void Die ()
     {
         morreu = true;
-        ParticleSystem  explosaoInstanciada = Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
+        
+        alive = false;
+        rb.velocity = new Vector2(0,0);
+        rb.angularVelocity = 0;
+        GetComponent<Renderer>().enabled = false;
+        /* ParticleSystem  explosaoInstanciada = Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
         explosaoInstanciada.Play(); 
-        Destroy(gameObject);
-        Destroy(explosaoInstanciada, 1f);
+        Destroy(explosaoInstanciada, 1f); */
     }
 
     public abstract void Move();
@@ -80,10 +108,10 @@ public abstract class Airplane : MonoBehaviour
         //esquerda ou direita?
         if(rotation < 90 || rotation > 280)
         {
-            transform.Rotate(new Vector3(0, 0, -fallSpeed), Space.Self);
+            rotate(-fallSpeed);
         }else
         {
-            transform.Rotate(new Vector3(0, 0, fallSpeed), Space.Self);
+            rotate(fallSpeed);
         }
     }
     protected void Animation()
@@ -114,12 +142,35 @@ public abstract class Airplane : MonoBehaviour
         switch (collision2.gameObject.tag)
         {
             case "Predios":
+                Debug.Log("bateu na predio");
+                TakeDamage(this.health);
+                break;
+            case "terra":
+                Debug.Log("bateu na terra");
+                TakeDamage(this.health);
+                break;
+            case "ceu":
+                Debug.Log("bateu na ceu");
+                TakeDamage(this.health);
+                break;
+            case "parede":
+                Debug.Log("bateu na parede");
                 TakeDamage(this.health);
                 break;
             case "Enemy":
-                TakeDamage(this.health);
+                //TakeDamage(this.health);
                 break;
 
+        }
+    }
+
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        switch(other.tag){
+            case "MundoBordas":
+                Die();
+                break;
         }
     }
     

@@ -15,6 +15,9 @@ TagManager:
   - MundoBordas
   - Confiner
   - bullet
+  - ceu
+  - terra
+  - parede
   layers:
   - Default
   - TransparentFX
@@ -26,8 +29,8 @@ TagManager:
   - 
   - CameraNaoVe
   - LevelImagem
-  - 
-  - 
+  - enemies
+  - player
   - 
   - 
   - 
