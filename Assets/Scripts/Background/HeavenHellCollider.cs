@@ -11,8 +11,6 @@ public class HeavenHellCollider : MonoBehaviour
     {
         collider2D = GetComponent<BoxCollider2D>();
         
-        Debug.Log("before" + collider2D.size);
         collider2D.size = new Vector2(Mathf.Infinity, 1);
-        Debug.Log("after" + collider2D.size);
     }
 }

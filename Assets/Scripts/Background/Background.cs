@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Background : MonoBehaviour
 {
-
+    
     Material material;
     Vector2 offset;
     GameObject mainCamera;
@@ -47,3 +47,4 @@ public class Background : MonoBehaviour
 
     }
 }
+        

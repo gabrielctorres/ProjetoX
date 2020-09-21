@@ -72,9 +72,7 @@ public class PlayerScript : Airplane
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, visibleDistance);
         if(hit.collider != null)
         {
-            Debug.Log("bateu em algo na frente");
             rDist = 1 - Round(hit.distance/visibleDistance);
-            Debug.Log(rDist);
         }
 
         hit = Physics2D.Raycast(transform.position, transform.up, visibleDistance);

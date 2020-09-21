@@ -142,19 +142,15 @@ public abstract class Airplane : MonoBehaviour
         switch (collision2.gameObject.tag)
         {
             case "Predios":
-                Debug.Log("bateu na predio");
                 TakeDamage(this.health);
                 break;
             case "terra":
-                Debug.Log("bateu na terra");
                 TakeDamage(this.health);
                 break;
             case "ceu":
-                Debug.Log("bateu na ceu");
                 TakeDamage(this.health);
                 break;
             case "parede":
-                Debug.Log("bateu na parede");
                 TakeDamage(this.health);
                 break;
             case "Enemy":

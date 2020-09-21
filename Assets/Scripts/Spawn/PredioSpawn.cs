@@ -4,11 +4,23 @@ using UnityEngine;
 public class PredioSpawn : MonoBehaviour
 {    
     public List<GameObject> listaPredios = new List<GameObject>();
+    public List<GameObject> listaPiramide = new List<GameObject>();
+    public List<GameObject> listaArvore = new List<GameObject>();
+    public List<GameObject> listaSeiNao = new List<GameObject>();
+
+    List<List<GameObject>> cenarios = new List<List<GameObject>>();
+
+    private int cenarioIndex = 0;
+
     public float speedSpawn;
     Vector2 posicaoSpawn;
     GameObject predioAux;
     void Start()
     {
+        cenarios.Add(listaPredios);
+        cenarios.Add(listaPiramide);
+        cenarios.Add(listaArvore);
+        cenarios.Add(listaSeiNao);
         posicaoSpawn = transform.position;
 
         InvokeRepeating("spawnPredio", 1f, speedSpawn);
@@ -26,7 +38,8 @@ public class PredioSpawn : MonoBehaviour
             
         }
 
-        predioAux = Instantiate(listaPredios[predioSorteado].gameObject, posicaoSpawn, Quaternion.identity);
+        
+        predioAux = Instantiate(cenarios[cenarioIndex][predioSorteado].gameObject, posicaoSpawn, Quaternion.identity);
     }
 
 }

@@ -198,12 +198,7 @@ public class Enemy : Airplane
         outputs.Add(0);
 
         calcOutputs = redeNeural.CalcOutput(inputs, outputs);
-
-        Debug.Log("output: " + calcOutputs[0]);
         float rot = Map(-1,1,0,1,(float) calcOutputs[0]);
-
-        Debug.Log("parsed output: " + rot);
-
 
         rotate(rot);
     }
