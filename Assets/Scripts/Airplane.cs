@@ -91,9 +91,9 @@ public abstract class Airplane : MonoBehaviour
         rb.velocity = new Vector2(0,0);
         rb.angularVelocity = 0;
         GetComponent<Renderer>().enabled = false;
-        /* ParticleSystem  explosaoInstanciada = Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
+        ParticleSystem  explosaoInstanciada = Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
         explosaoInstanciada.Play(); 
-        Destroy(explosaoInstanciada, 1f); */
+        Destroy(explosaoInstanciada, 1f);
     }
 
     public abstract void Move();
@@ -154,7 +154,7 @@ public abstract class Airplane : MonoBehaviour
                 TakeDamage(this.health);
                 break;
             case "Enemy":
-                //TakeDamage(this.health);
+                TakeDamage(this.health);
                 break;
 
         }

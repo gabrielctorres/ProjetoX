@@ -10,6 +10,8 @@ public class Parallax : MonoBehaviour
     public GameObject cam;
     public float paralaxEffect;
     public bool shouldMove = true;
+
+    public bool isGameJustStarting = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,17 +26,30 @@ public class Parallax : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //if(shouldMove){
-            float temp = (cam.transform.position.x * (1 - paralaxEffect));
-            float dist = (cam.transform.position.x * paralaxEffect);
+        aplicarParallax();
 
-            transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
-            CinemachineConfiner confiner = GameObject.FindGameObjectWithTag("Confiner").
-                                            GetComponent<CinemachineConfiner>();
-            confiner.InvalidatePathCache();
+        CinemachineConfiner confiner = GameObject.FindGameObjectWithTag("Confiner").
+                                        GetComponent<CinemachineConfiner>();
+        confiner.InvalidatePathCache();
+
+    }
+
+    private void aplicarParallax()
+    {
+        float temp = (cam.transform.position.x * (1 - paralaxEffect));
+        float dist = (cam.transform.position.x * paralaxEffect);
+
+        transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
+
+        replicarCenario(temp, dist);
+    }
+
+    private void replicarCenario(float temp, float dist)
+    {
+        if(shouldMove)
+        {
             if(temp > startPos + length) startPos += length;
-            else if(temp < startPos - length) startPos -= length;
-        
-        
+            else if(temp < startPos - length && isGameJustStarting) startPos -= length;
+        }
     }
 }

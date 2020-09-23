@@ -5,41 +5,62 @@ public class PredioSpawn : MonoBehaviour
 {    
     public List<GameObject> listaPredios = new List<GameObject>();
     public List<GameObject> listaPiramide = new List<GameObject>();
-    public List<GameObject> listaArvore = new List<GameObject>();
-    public List<GameObject> listaSeiNao = new List<GameObject>();
 
-    List<List<GameObject>> cenarios = new List<List<GameObject>>();
+    public GameObject cam;
+    public List<List<GameObject>> cenarios = new List<List<GameObject>>();
 
-    private int cenarioIndex = 0;
+    public int cenarioIndex = 0;
 
-    public float speedSpawn;
+    public float speedSpawn = 0.5f;
     Vector2 posicaoSpawn;
     GameObject predioAux;
+    List<GameObject> obstaculosAtivos = new List<GameObject>();
+    public bool shouldSpawn = true;
     void Start()
     {
         cenarios.Add(listaPredios);
         cenarios.Add(listaPiramide);
-        cenarios.Add(listaArvore);
-        cenarios.Add(listaSeiNao);
-        posicaoSpawn = transform.position;
 
-        InvokeRepeating("spawnPredio", 1f, speedSpawn);
+    }
+
+    private void Update() {
+        float distance = Vector3.Distance(cam.transform.position, transform.position);
+        if(distance < 50)
+        {            
+            Vector3 newPosition = transform.position;
+            int distancia = Random.Range(0, 50);
+            newPosition.x = cam.transform.position.x + 80 +distancia;
+            transform.position = newPosition;
+            posicaoSpawn = transform.position;
+            if(shouldSpawn)
+            {
+                spawnPredio();
+            }
+        }
     }
 
 
-    void spawnPredio() { 
-    
-        int predioSorteado = Random.Range(0, listaPredios.Count);
-        if (predioAux != null)
-        {
-            int distancia = Random.Range(20, 80);
-            SpriteRenderer spritePredio = predioAux.GetComponent<SpriteRenderer>();
-            posicaoSpawn.x += spritePredio.size.x * transform.localScale.x + distancia;
-            
-        }
+    void spawnPredio() {    
+        int predioSorteado = Random.Range(0, cenarios[cenarioIndex].Count);
+        obstaculosAtivos.Add(Instantiate(cenarios[cenarioIndex][predioSorteado].gameObject, posicaoSpawn, Quaternion.identity));
+    }
+    public void trocarCenario(int cenarioIndex)
+    {
+        this.cenarioIndex = cenarioIndex;
 
-        
-        predioAux = Instantiate(cenarios[cenarioIndex][predioSorteado].gameObject, posicaoSpawn, Quaternion.identity);
+        SpriteRenderer spritePredio = obstaculosAtivos[obstaculosAtivos.Count - 1].GetComponent<SpriteRenderer>();
+
+        if(this.cenarioIndex >= cenarios.Count)
+        {
+            this.cenarioIndex = 0;
+        }
+        foreach (GameObject obj in obstaculosAtivos)
+        {
+            Destroy(obj);
+        }
+        obstaculosAtivos.Clear();
+        posicaoSpawn.x = cam.transform.position.x;
+        this.shouldSpawn = true;
     }
 
 }
