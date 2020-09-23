@@ -12,7 +12,7 @@ public class cameraMoviment : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
-
+        
     // Update is called once per frame
     void Update()
     {
